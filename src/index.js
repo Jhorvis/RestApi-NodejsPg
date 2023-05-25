@@ -8,7 +8,6 @@ const serverport =  process.env.SERVER_PORT;
 app.use(express.json());
 app.use(express.urlencoded( { extened: false } ))
 
-
 //routes
 app.use(require('./routes/index'));
 
