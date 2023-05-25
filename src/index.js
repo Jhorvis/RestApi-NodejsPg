@@ -7,7 +7,7 @@ const serverport =  3000;//process.env.SERVER_PORT;
 //middlewares
 app.use(express.json());
 app.use(express.urlencoded( { extened: false } ))
-
+app.use( express.static('public') )
 //routes
 app.use(require('./routes/index'));
 
