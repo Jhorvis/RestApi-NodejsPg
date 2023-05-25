@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>API Functions</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header>
+    <h1>Funciones de la API</h1>
+  </header>
+
+  <section class="api-function">
+    <h2>Listar todos los usuarios</h2>
+    <p>Método: GET</p>
+    <p>Endpoint: <code>http://3.239.163.221:3000/users</code></p>
+  </section>
+
+  <section class="api-function">
+    <h2>Buscar usuarios por ID</h2>
+    <p>Método: GET</p>
+    <p>Endpoint: <code>http://3.239.163.221:3000/users/:id</code></p>
+  </section>
+
+  <section class="api-function">
+    <h2>Crear un nuevo usuario</h2>
+    <p>Método: POST</p>
+    <p>Endpoint: <code>http://3.239.163.221:3000/users</code></p>
+    <p>Body:</p>
+    <pre><code>{
+  "name": "Juan Gonzalez",
+  "email": "juan.gonzalez@gmail.com"
+}</code></pre>
+  </section>
+
+  <section class="api-function">
+    <h2>Borrar un usuario</h2>
+    <p>Método: DELETE</p>
+    <p>Endpoint: <code>http://3.239.163.221:3000/users/:id</code></p>
+  </section>
+
+  <section class="api-function">
+    <h2>Actualizar un usuario</h2>
+    <p>Método: PUT</p>
+    <p>Endpoint: <code>http://3.239.163.221:3000/users/:id</code></p>
+    <p>Body:</p>
+    <pre><code>{
+  "name": "Juan Gonzalez",
+  "email": "juan.gonzalez@gmail.com"
+}</code></pre>
+  </section>
+</body>
+</html>
