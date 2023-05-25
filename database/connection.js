@@ -8,4 +8,16 @@ const pool = new Pool({
     port: '5432'
 })
 
-module.exports = pool;
+const poolAws = new Pool({
+    host: 'database-2.chw0jjnrseac.us-east-1.rds.amazonaws.com',
+    user: 'postgres',
+    password: 'Sanipez.006767',
+    database: 'postgres',
+    port: '5432'
+})
+
+
+module.exports = {
+    pool,
+    poolAws
+};
