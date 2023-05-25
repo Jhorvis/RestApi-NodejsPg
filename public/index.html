@@ -27,10 +27,12 @@
     <p>Método: POST</p>
     <p>Endpoint: <code>http://3.239.163.221:3000/users</code></p>
     <p>Body:</p>
-    <pre><code>{
-  "name": "Juan Gonzalez",
-  "email": "juan.gonzalez@gmail.com"
-}</code></pre>
+    <pre class="json-container"><code class="json">
+{
+  <span class="json-key">"name"</span>: <span class="json-string">"Juan Gonzalez"</span>,
+  <span class="json-key">"email"</span>: <span class="json-string">"juan.gonzalez@gmail.com"</span>
+}
+</code></pre>
   </section>
 
   <section class="api-function">
@@ -44,10 +46,15 @@
     <p>Método: PUT</p>
     <p>Endpoint: <code>http://3.239.163.221:3000/users/:id</code></p>
     <p>Body:</p>
-    <pre><code>{
-  "name": "Juan Gonzalez",
-  "email": "juan.gonzalez@gmail.com"
-}</code></pre>
+    <pre class="json-container"><code class="json">
+{
+  <span class="json-key">"name"</span>: <span class="json-string">"Juan Gonzalez"</span>,
+  <span class="json-key">"email"</span>: <span class="json-string">"juan.gonzalez@gmail.com"</span>
+}
+</code></pre>
   </section>
+
+  <script src="highlight.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>

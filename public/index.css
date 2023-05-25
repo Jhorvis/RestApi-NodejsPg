@@ -1,0 +1,103 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+.api-function {
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+p {
+  margin: 0;
+}
+
+code {
+  background-color: #f1f1f1;
+  padding: 2px 4px;
+  font-family: Consolas, monospace;
+}
+
+pre {
+  background-color: #f1f1f1;
+  padding: 10px;
+  overflow-x: auto;
+  font-family: Consolas, monospace;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.json-container {
+  position: relative;
+  border-left: 2px solid #ccc;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.json-key {
+  color: #888;
+}
+
+.json-string {
+  color: #0a0;
+}
+
+.json-number {
+  color: #00a;
+}
+
+.json-boolean {
+  color: #a00;
+}
+
+.json-null {
+  color: #555;
+}
+
+.json-collapser:before {
+  content: "+";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #666;
+  cursor: pointer;
+}
+
+.json-collapsed .json-collapser:before {
+  content: "-";
+}
+
+.json-collapser {
+  position: relative;
+  cursor: pointer;
+  margin-right: 5px;
+  display: inline-block;
+  vertical-align: top;
+  user-select: none;
+}
+
+.json-collapsible {
+  display: none;
+  margin-left: 15px;
+}
+
+.json-expanded .json-collapsible {
+  display: block;
+}
