@@ -2,7 +2,7 @@ const express = require('express');
 require('dotenv').config();
 const app = express()
 
-const serverport =  process.env.SERVER_PORT;
+const serverport =  3000;//process.env.SERVER_PORT;
 
 //middlewares
 app.use(express.json());
