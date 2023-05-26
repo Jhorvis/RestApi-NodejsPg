@@ -8,7 +8,7 @@ app.use(morgan('combined'));
 app.use( express.static('public') )
 
 app.use(express.json());
-app.use(express.urlencoded( { extened: false } ))
+app.use(express.urlencoded({ extended: false }));
 
 app.use(require('./routes/index'));
 
