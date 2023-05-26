@@ -1,18 +1,16 @@
 const express = require('express');
-const morgan = require('morgan')
-
+require('dotenv').config();
 const app = express()
 
-// using morgan for logs
-app.use(morgan('combined'));
+const serverport =  3000;//process.env.SERVER_PORT;
 app.use( express.static('public') )
-
+//middlewares
 app.use(express.json());
 app.use(express.urlencoded( { extened: false } ))
 
+//routes
 app.use(require('./routes/index'));
 
 
-app.listen(3000, () => {
-    console.log(`> Ready on http://localhost:3000`);
-});
+app.listen(serverport)
+console.log(`Server on port ${serverport}`)

@@ -1,15 +1,20 @@
 const { json } = require("express")
-const { poolAws } = require("../../database/connection")
+const { supabase } = require("../../database/connection")
 
 const getUsers = async (req, res) => {
-    const response = await poolAws.query('SELECT * FROM users')
-    res.status(200).json(response.rows)
+    const {data, error} = await supabase.from('users').select('*')
+    res.status(200).send(data)
 }
 
 
 const newUser = async (req, res) => {
     const {name, email} = req.body;
-    await poolAws.query('INSERT INTO users (name, email) VALUES ($1, $2)', [name, email])
+    const {data, error} = await supabase.from('users').insert([
+            {
+                name: name,
+                email: email
+            }
+    ])
     res.json({
         message: 'User Added succesfully',
         body: {
@@ -23,14 +28,13 @@ const newUser = async (req, res) => {
 
 const getUserById = async (req, res) => {
     const { id } = req.params;
-    const response = await poolAws.query('SELECT * FROM users WHERE id = $1', [id]);
-    if ((response.rows).length < 1) return res.status(401).send('Usuario no encontrado')
-    res.json(response.rows)
+    const {data, error} =  await supabase.from('users').select('*').eq('id', id)
+    res.json(data)
 }
 
 const deleteUsersById = async (req, res) => {
     const { id } = req.params;
-    const response = await poolAws.query('DELETE FROM users WHERE id = $1', [id]);
+    const {data, error} = await supabase.from('users').delete().eq('id', id);
     res.json({
         msg: 'Usuario Eliminado',
         id: id,
@@ -40,7 +44,10 @@ const deleteUsersById = async (req, res) => {
 const updateUserById = async (req, res) => {
     const { id } = req.params;
     const {name, email} = req.body;
-    const response = await poolAws.query('UPDATE users SET name = $1, email = $2 WHERE id = $3', [name, email, id]);
+    const {data, error} =  await supabase.from('users').update({
+        name: name,
+        email: email
+    }).eq('id', id);
     res.json({
         msg: `Usuario ${id} Actualizado`
     })
