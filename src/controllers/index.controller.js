@@ -53,6 +53,10 @@ const updateUserById = async (req, res) => {
     })
 }
 
+const MCU =  async (req, res) => {
+    
+}
+
 module.exports = { 
     getUsers,
     newUser,

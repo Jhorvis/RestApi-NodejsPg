@@ -18,5 +18,8 @@
     "express-oauth2-jwt-bearer": "^1.5.0",
     "morgan": "^1.10.0",
     "pg": "^8.11.0"
+  },
+  "devDependencies": {
+    "http-proxy-middleware": "^2.0.6"
   }
 }
