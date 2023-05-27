@@ -15,7 +15,9 @@
     "@supabase/supabase-js": "^2.22.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-jwt": "^8.4.1",
     "express-oauth2-jwt-bearer": "^1.5.0",
+    "jwks-rsa": "^3.0.1",
     "morgan": "^1.10.0",
     "pg": "^8.11.0"
   },

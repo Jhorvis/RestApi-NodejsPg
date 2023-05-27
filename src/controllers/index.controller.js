@@ -1,8 +1,10 @@
 const { json } = require("express")
 const { supabase } = require("../../database/connection")
+require('dotenv').config();
 
 const getUsers = async (req, res) => {
-    const {data, error} = await supabase.from('users').select('*')
+    const {data, error} = await supabase.from('users').select('*');
+    res.setHeader('authorization', `Bearer ${process.env.ACCESS_TOKEN}`);
     res.status(200).send(data)
 }
 
