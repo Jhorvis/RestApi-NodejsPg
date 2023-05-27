@@ -1,13 +1,15 @@
 const { createProxyMiddleware } = require("http-proxy-middleware");
 
 const options = {
-    target:'http://google.cl',
-    chageOrigin: true,
+    target:'https://v2.jokeapi.dev',
+    changeOrigin: true,
     pathRewrite: {
 
+        '^/joke': '/joke/Any'
     }
 }
 
-const exampleProxy = createProxyMiddleware('/users', options);
+const proxyhost = createProxyMiddleware('/joke', options)
 
-module.exports = exampleProxy;
+
+module.exports = proxyhost;
